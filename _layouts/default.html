@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{site.title}} {{page.title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0" name="viewport">
+    <style type="text/css">
+    {% capture style %}
+    {% include main.scss %}
+    {% endcapture %}
+    {{ style | scssify}}
+    </style>
+    {% include seo/rich-data.html %}
+</head>
+
+<body class="{{page.layout}}">
+    <a class="landmark" href="#content">skip to main content</a> 
+    <div class="container">
+        <nav class="drawer initial" id="sidebar" aria-label="Site Sections">
+            <h2 class="heading"><a class="icon close button" href="#header" title="close" aria-controls="sidebar"><i class="material-icons">menu</i></a> Menu</h2>
+            <ul class="pages menu list">
+                {% for page in site.pages %}
+                <li><a href="/{{page | downcase}}">{{page}}</a></li>
+                {% endfor %}
+            </ul>
+            <hr />
+            <ul class="menu list">
+                {%- for post in site.posts -%}
+                <li><a href="{{post.url}}">{{post.title}}</a></li>
+                {% endfor %}
+            </ul>
+            {% include logo.html %}
+        </nav>
+        <div class="wrapper" id="push">
+            <header class="site" id="header">
+                <h1 class="heading">
+                    <a class="icon toggle button" href="#sidebar" title="menu" aria-controls="sidebar"><i class="material-icons">menu</i></a>
+                    <a href="/">{{site.title}}</a> 
+                </h1>
+            </header>
+            <main id="content">
+                <h2 class="heading"><i class="big material-icons" aria-hidden="true">{{page.icon}}</i> {{ page.title }}</h2> 
+                {{content}}
+            </main>
+            <footer role="contentinfo">
+                <p>Site by <a href="https://github.com/1000-Paper-Cranes">1000 Paper Cranes</a>.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script> 
+    function site() {
+    "use strict";
+    var drawer = document.querySelector(".drawer");
+    var toggler = document.querySelector(".toggle.button");
+    var close = document.querySelector(".close.button");
+
+    toggler.onclick = function() {
+        drawer.classList.toggle("toggle");
+    };
+    close.onclick = function() {
+        drawer.classList.toggle("toggle");
+    };
+
+}
+</script>
+{% include seo/site.html %}
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+---
+layout: crane
+title:  "Github"
+date:   2018-09-08 11:25:39 +0100
+tags: [git, 'version control', 'github']
+---
+
+<cite>One</cite> uses [Github]() to host its [git repository](). Git is [version control]().

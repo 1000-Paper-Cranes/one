@@ -1,0 +1,39 @@
+---
+layout: crane
+title:  "Homebrew"
+date:   2018-09-08 11:25:39 +0100
+tags: [osx, homebrew, "package manager"]
+---
+
+[Homebrew](https://brew.sh/) is a [package manager](https://en.wikipedia.org/wiki/Package_manager) for OSX. _Install everything through Homebrew_ and you'll get fewer maddening path and version problems. Just stick with Homebrew!
+
+(I am banned by Devops from using anything other than Homebrew and this is absolutely deserved.)
+
+To install homebrew. In your terminal type:
+````
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+````
+
+Then to install anything you need type:
+````
+brew install packagename
+````
+
+Like, for this project you'd need to:
+
+````
+brew install node
+````
+
+and 
+
+````
+brew install ruby
+`````
+
+
+
+
+
+
+

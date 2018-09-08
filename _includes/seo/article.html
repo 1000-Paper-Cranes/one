@@ -1,0 +1,40 @@
+	<!--Article JSON-->
+{% capture words %}{{ page.content | number_of_words }}{% endcapture %}
+{% capture entity %}{{site.url}}{{ page.url }}{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ entity }}"
+  },
+  "headline": "{{ page.title }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{site.url}}{{ page.image }}",
+  },
+  "datePublished": "{{ page.date }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{page.author}}"
+  },
+  "editor": "{{site.editor}}", 
+  "keywords": ["{{page.tags | array_to_sentence_string}}"], 
+  "wordcount": "{{ words }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{site.org}}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{site.logo}}",
+      "width": {{site.logo-width}},
+      "height": {{site.logo.height}}
+    }
+  },
+  "description": "{{ page.excerpt | strip_html | xml_escape | normalize_whitepace | strip_newlines | strip  }}",
+  "articleBody": "{{ page.content | strip_html | xml_escape | normalize_whitepace | strip_newlines | strip  }}"
+}
+</script>
+	

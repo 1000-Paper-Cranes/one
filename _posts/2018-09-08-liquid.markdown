@@ -1,0 +1,19 @@
+---
+layout: crane
+title:  "Liquid"
+date:   2018-09-08 11:25:39 +0100
+tags: [jekyll, templater, ruby, liquid]
+---
+
+[Jekyll templates](https://jekyllrb.com/docs/step-by-step/02-liquid/) are written in [Liquid](https://shopify.github.io/liquid/). It's a simple templating language that is easy to learn, but sometimes can be a bit limited (by design). You mostly write html, but you can:
+
+1. put in variables, usually pulled from [front matter]() like <code>{{page.title}}</code> or site config like <code>{{site.title}}</code>
+2. Loop over a list, like: <code>{% for item in list %}<li>{{item.name}}</li> {% endfor %} and similar [logic](https://www.shopify.co.uk/partners/shopify-cheat-sheet)
+3. Include reusable chunks like this {% include list.html %}
+
+And more. Probably the most useful things to know that are not mad obvious are how to sort collections and how to pass parameters to includes: [sort](https://gist.github.com/Phlow/1f27dfafdf2bbcc5c48e) [pass params](https://jekyllrb.com/docs/includes/#passing-parameters-to-includes).
+
+You can look at the Liquid used on this site by going to [the repo](). Look in _includes/ and _layouts/ .
+
+
+

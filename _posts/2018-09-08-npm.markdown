@@ -1,0 +1,23 @@
+---
+layout: crane
+title:  "NPM"
+date:   2018-09-08 11:25:39 +0100
+tags: [node, javascript, "package manager"]
+---
+
+To install [Gulp](/gulp) you need NPM (and to use that you need node and to use that you need [Homebrew](/homebrew)!)
+
+[NPM](https://www.npmjs.com/get-npm) is a [package manager](https://www.npmjs.com/). Another one that does basically the same thing (cue outraged dissent) is [yarn](https://yarnpkg.com/en/), but this site is using npm. 
+
+
+To check you have node type:
+````
+node -v
+````
+
+And to check you have npm (comes with node):
+````
+npm -v
+````
+
+If you don't have node, install it with [Homebrew](/homebrew) (on Mac).

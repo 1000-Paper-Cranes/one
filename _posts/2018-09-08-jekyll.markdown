@@ -1,0 +1,29 @@
+---
+layout: crane
+title:  "Jekyll"
+date:   2018-09-08 11:25:39 +0100
+tags: [jekyll, ssg, ruby, liquid]
+---
+<cite>One</cite> uses [Jekyll](https://jekyllrb.com/), one of the oldest and most popular [static site generators](). I use Jekyll a lot for prototyping and a lot of people use it for blogging. You can use it right in Github to make a site if you want.
+
+To run Jekyll you need:
+1. a [ruby development environment](/homebrew)
+2. the jekyll gem: 
+	````
+	gem install jekyll bundler
+	````
+3. a jekyll project:
+	````
+	jekyll new projectname
+	````
+
+Now change directory into your new project:
+	````
+	cd projectname
+	````
+And serve your new site:
+	````
+	jekyll serve
+	````
+
+And you're up and going! Add posts to your posts folder, or make a [collection]() of pages if you prefer. And start writing your templates in [liquid](/liquid).

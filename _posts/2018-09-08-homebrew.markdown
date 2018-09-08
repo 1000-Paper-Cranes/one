@@ -5,35 +5,68 @@ date:   2018-09-08 11:25:39 +0100
 tags: [osx, homebrew, "package manager"]
 ---
 
-[Homebrew](https://brew.sh/) is a [package manager](https://en.wikipedia.org/wiki/Package_manager) for OSX. _Install everything through Homebrew_ and you'll get fewer maddening path and version problems. Just stick with Homebrew!
+[Homebrew](https://brew.sh/) is a [package manager](https://en.wikipedia.org/wiki/Package_manager) for macOS.  It's the closest into a proper package manager like apt you can get on macOS. _Install everything through Homebrew_ and you'll get fewer maddening path and version problems, it doesn't require sudo to run meaning it's much simpler to administer for users and DevOps. 
 
-(I am banned by Devops from using anything other than Homebrew and this is absolutely deserved.)
+Just stick with Homebrew!
 
-To install homebrew. In your terminal type:
-````
+(I am banned by Devops from using anything other than Homebrew and this is absolutely deserved.)  <-- True Dat (DevOps ♿️)
+
+## Installing Homebrew ##
+
+To install homebrew. In your Terminal[^1] type:
+
+```console
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-````
+```
+
+You can check the installation went well by running the built-in troubleshooting tool which will walk you through solving any problems: 
+
+```console
+brew doctor
+```
+
+### Installing Packages ###
 
 Then to install anything you need type:
-````
+
+```console
 brew install packagename
-````
+```
 
 Like, for this project you'd need to:
 
-````
+```console
 brew install node
-````
+```
 
 and 
 
-````
+```console
 brew install ruby
-`````
+```
 
+### Other Homebrew Functions ###
 
+You can also search for software using:
 
+```console
+brew search package-name
+```
 
+And if you want to know more about particular package you can run the following which will tell you things like its dependencies, other software that can be installed with it etc:
 
+```console
+brew info package-name
+```
 
+And if you get stuck you can just ask homebrew for help with:
 
+```console
+brew help
+```
+
+## Uninstalling Homebrew ##
+
+If your Homebrew installation ever goes completely custardy then there is a handy [Homebrew uninstall script](https://raw.githubusercontent.com/Homebrew/install/master/uninstall) which will wipe your computer clean of Homebrew and its packages.  Just save the script your computer and call it "uninstall", then run it with  `./uninstall --help` to see more options.
+
+[^1]: The default terminal on the Mac is located in the folder __/Applications/Utilities/Terminal.app__

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-util": "^3.0.8",
+  }
+}

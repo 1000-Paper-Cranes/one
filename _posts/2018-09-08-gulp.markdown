@@ -1,0 +1,65 @@
+---
+layout: crane
+title:  "Gulp"
+date:   2018-09-08 11:25:39 +0100
+tags: [task-runner, gulp, child-process, browsersync]
+---
+
+<cite>One</cite> uses [Gulp](https://gulpjs.com/) just to serve itself locally because I like [Browsersync](https://browsersync.io/docs/gulp) hot reload better than [Jekyll serve](https://jekyllrb.com/docs/usage/). Gulp is a task runner. It has lots of pre-built (you can write your own too) packages for common boring or time consuming tasks we do a lot in Front End. Gulp tasks are really easy to use.
+
+In the command line, go to your project:
+````
+cd myproject
+````
+
+Install gulp as a [development dependency](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/) with [npm](/npm):
+````
+npm install gulp --save-dev
+````
+
+Make a gulpfile in your project:
+````
+touch gulpfile.js
+````
+ 
+Here's the initial gulpfile (find the latest version on the [github]() repo ), nabbed wholesale from [Aaron Lasseigne's post](aaronlasseigne.com/2016/02/03/using-gulp-with-jekyll/) on running Jekyll as a child process of Gulp. Hat tip!
+
+{% highlight javascript %}
+//aaronlasseigne.com/2016/02/03/using-gulp-with-jekyll/ 
+const gulp = require('gulp');
+const child = require('child_process');
+const browserSync = require('browser-sync').create();
+const log = require('fancy-log');
+const siteRoot = 'site'; 
+
+//start jekyll and serve with browsersync
+gulp.task('jekyll', () => {
+  const jekyll = child.spawn('jekyll', ['build',
+    '--watch',
+    '--incremental',
+    '--drafts'
+  ]);
+
+  const jekyllLogger = (buffer) => {
+    buffer.toString()
+      .split(/\n/)
+      .forEach((message) => log('Jekyll: ' + message));
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
+
+gulp.task('serve', () => { 
+  browserSync.init({
+    files: [siteRoot + '/**'],
+    port: 4000,
+    server: {
+      baseDir: siteRoot
+    }
+  });
+});
+
+
+gulp.task('default', [ 'jekyll', 'serve']);
+{% endhighlight %}

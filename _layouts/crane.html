@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<article class="crane">
+	<header class="page">
+		<picture class="hero">
+		<img src="{{page.hero}}" alt="" />
+		</picture>
+		<h2 class="heading">{{page.title}}</h2>
+		<p class="author">{{page.author}}</p>
+	</header>
+
+	<section class="group">
+		{{content}}
+	</section>
+
+	<footer class="page">
+		<nav class="pagination" aria-label="Page through posts">
+			<p>
+				{% if page.previous.url %}
+					<a class="older" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+				{% endif %}
+				{% if page.next.url %}
+					<a class="newer" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+				{% endif %}
+			</p>
+		</nav>
+	</footer>
+
+	{% include json-ld/article.html %}
+
+

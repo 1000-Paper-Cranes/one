@@ -7,7 +7,7 @@
 * drop in services, like formspree, disqus, and search
 * build tools, like grunt, gulp, and other tasks and task runners
 * template and markup, like liquid, pug, haml or markdown
-* layout and design approaches, like typographical scales, illustration and decoration, progressive enhancement
+* layout and design approaches, like typographical scales, illustration, css grid, open design
 * css processors, like scss, less, or stylus
 * testers, like cucumber, jasmine, or mocha
 * hosting services, like

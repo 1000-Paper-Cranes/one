@@ -1,9 +1,7 @@
-# one
+# One #
 
-1. Let's build 1000 websites, using as many different 
-
-* static site generators, like jekyll, hugo or gatsby
-* languages like go, ruby, or javascript (and frameworks like react or vue)
+1. Let's build 1000 websites, using as many different Static Site Generators as we can find. Generators such as [Eleventy][eleventy], [Jekyll][jekyll], [Hugo][hugo] or [Gatsby][gatsby].
+2. With languages like go, ruby, or javascript (and frameworks like react or vue)
 * drop in services, like formspree, disqus, and search
 * build tools, like grunt, gulp, and other tasks and task runners
 * template and markup, like liquid, pug, haml or markdown
@@ -14,14 +12,15 @@
 * deployment XX like YY
 
 
-as we can!
+## The Plan ##
 
-2. Start small.
-
-3. Open source all the way.
-
-4. Let anyone join who wants.
-
-5. That's the plan.
+1. Start small.
+2. Open source all the way.
+3. Let anyone join who wants.
+4. That's the plan.
 
 
+[eleventy]: https://github.com/11ty/eleventy
+[jekyll]: https://jekyllrb.com/
+[hugo]: https://gohugo.io/
+[gatsby]: https://www.gatsbyjs.org/
